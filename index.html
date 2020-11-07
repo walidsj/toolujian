@@ -124,14 +124,7 @@
          <div class="col-md-4">
             <div class="card">
                <div class="card-body">
-                  <div class="form-group">
-                     <div id="hasil" class="alert alert-warning" role="alert">
-                        <b>LJU_<span id="hasil_sesi">Sesi Ujian</span>_<span id="hasil_prodi">Prodi</span>_<span
-                              id="hasil_kelas">Kelas</span>_<span id="hasil_matkul">Mata Kuliah</span>_<span
-                              id="hasil_noabsen">No. Absen</span>_<span id="hasil_nama">Nama</span>_<span
-                              id="hasil_npm">NPM</span></b>
-                     </div>
-                  </div>
+
                   <div class="form-group">
                      <input id="sesi" type="number" class="form-control" value="" placeholder="Sesi Ujian (01)">
                   </div>
@@ -296,7 +289,15 @@
                      </select>
                   </div>
                   <div class="form-group">
-                     <button onclick="copyToClipboard('#hasil')" id="button" type="submit"
+                     <div id="hasil" class="alert alert-warning" role="alert">
+                        <b>LJU_<span id="hasil_sesi">Sesi Ujian</span>_<span id="hasil_prodi">Prodi</span>_<span
+                              id="hasil_kelas">Kelas</span>_<span id="hasil_matkul">Mata Kuliah</span>_<span
+                              id="hasil_noabsen">No. Absen</span>_<span id="hasil_nama">Nama</span>_<span
+                              id="hasil_npm">NPM</span></b>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <button onclick="copyToClipboard('#hasil')" id="buttoncopy" type="submit"
                         class="btn btn-success btn-block btn-lg"><svg width="1em" height="1em" viewBox="0 0 16 16"
                            class="bi bi-stickies-fill mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                            <path fill-rule="evenodd"
