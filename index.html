@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description"
+      content="Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.">
+   <meta name="author" content="Moh. Walid Arkham Sani">
+
+   <title>Tool Ujian Jarak Jauh PKN STAN</title>
+
+   <link rel="icon" type="image/ico" href="favicon.ico">
+   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+   <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+   <div class="container pt-5">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="form-group">
+               <h3>Tool Penamaan LJU STAN 2020</h3>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-4">
+            <div class="form-group">
+               <input id="nama" type="text" class="form-control" value=""
+                  placeholder="Nama Lengkap (Moh. Walid Arkham Sani)">
+            </div>
+            <div class="form-group">
+               <input id="npm" type="number" class="form-control" value="" placeholder="NPM (2302180109)">
+            </div>
+            <div class="form-group">
+               <select id="prodi" name="prodi" class="form-control">
+                  <option value="">Pilih Program Studi</option>
+                  <option value='d3akt'>DIII Akuntansi</option>
+                  <option value='d3aktap'>DIII Akuntansi Alih Program</option>
+                  <option value='d4akt'>DIV Akuntansi (Reguler)</option>
+                  <option value='d4aktapnon'>DIV Akuntansi Alih Program (Non Akt)</option>
+                  <option value='d3pjk'>DIII Pajak</option>
+                  <option value='d3pjkap'>DIII Pajak Alih Program</option>
+                  <option value='d3pbb'>DIII PBB/Penilai</option>
+                  <option value='d3pbbap'>DIII PBB/Penilai Alih Program</option>
+                  <option value='d3bc'>DIII Kepabeanan Dan Cukai</option>
+                  <option value='d3bcap'>DIII Kepabeanan Dan Cukai Alih Program</option>
+                  <option value='d3kbn'>DIII Kebendaharaan Negara</option>
+                  <option value='d3kbnap'>DIII Kebendaharaan Negara Alih Program</option>
+                  <option value='d3ma'>DIII Manajemen Aset</option>
+
+               </select>
+            </div>
+            <div class="form-group">
+               <select id="semester" name="semester" class="form-control">
+                  <option value="">Pilih Semester</option>
+                  <option value='3d3akt' class='d3akt'>3</option>
+                  <option value='5d3akt' class='d3akt'>5</option>
+                  <option value='3d3aktap' class='d3aktap'>3</option>
+                  <option value='5d3aktap' class='d3aktap'>5</option>
+                  <option value='7d4akt' class='d4akt'>7</option>
+                  <option value='7d4aktapnon' class='d4aktapnon'>7</option>
+                  <option value='9d4aktapnon' class='d4aktapnon'>9</option>
+                  <option value='1d3pjk' class='d3pjk'>1</option>
+                  <option value='3d3pjk' class='d3pjk'>3</option>
+                  <option value='5d3pjk' class='d3pjk'>5</option>
+                  <option value='3d3pjkap' class='d3pjkap'>3</option>
+                  <option value='5d3pjkap' class='d3pjkap'>5</option>
+                  <option value='3d3pbb' class='d3pbb'>3</option>
+                  <option value='5d3pbb' class='d3pbb'>5</option>
+                  <option value='4d3pbbap' class='d3pbbap'>4</option>
+                  <option value='5d3pbbap' class='d3pbbap'>5</option>
+                  <option value='6d3pbbap' class='d3pbbap'>6</option>
+                  <option value='3d3bc' class='d3bc'>3</option>
+                  <option value='5d3bc' class='d3bc'>5</option>
+                  <option value='5d3bcap' class='d3bcap'>5</option>
+                  <option value='3d3kbn' class='d3kbn'>3</option>
+                  <option value='5d3kbn' class='d3kbn'>5</option>
+                  <option value='5d3kbnap' class='d3kbnap'>5</option>
+                  <option value='3d3ma' class='d3ma'>3</option>
+                  <option value='5d3ma' class='d3ma'>5</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <input id="kelas" type="text" class="form-control" value="" placeholder="Kelas (5-09)">
+            </div>
+            <div class="form-group">
+               <input id="noabsen" type="number" class="form-control" value="" placeholder="No. Absen (09)">
+            </div>
+            <div class="form-group">
+               <button onclick="setCookie('clicklink', 'yes', 30)" id="button" type="submit"
+                  class="btn btn-primary btn-block">Simpan Data</button>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="form-group">
+               <div id="hasil" class="alert alert-warning" role="alert">
+                  <b>LJU_<span id="hasil_sesi">Sesi Ujian</span>_<span id="hasil_prodi">Prodi</span>_<span
+                        id="hasil_kelas">Kelas</span>_<span id="hasil_matkul">Mata Kuliah</span>_<span
+                        id="hasil_noabsen">No. Absen</span>_<span id="hasil_nama">Nama</span>_<span
+                        id="hasil_npm">NPM</span></b>
+               </div>
+            </div>
+            <div class="form-group">
+               <input id="sesi" type="number" class="form-control" value="" placeholder="Sesi Ujian (01)">
+            </div>
+            <div class="form-group">
+               <select id="matkul" name="matkul" class="form-control">
+                  <option value="">Pilih Mata Kuliah</option>
+                  <option value='Eko.Mikro' class='3d3aktap'>Ekonomi Mikro</option>
+                  <option value='Hk Perdata' class='3d3aktap'>Hukum Perdata</option>
+                  <option value='PengAkun I' class='3d3aktap'>Pengantar Akuntansi I</option>
+                  <option value='P Peng Akun I' class='3d3aktap'>Praktik Pengantar Akuntansi I</option>
+                  <option value='AKBI II' class='5d3aktap'>Akuntansi Biaya II</option>
+                  <option value='AKM I' class='5d3aktap'>Akuntansi Keuangan Menengah I</option>
+                  <option value='AkPem II' class='5d3aktap'>Akuntansi Pemerintah II</option>
+                  <option value='HKN' class='5d3aktap'>Hukum Keuangan Negara</option>
+                  <option value='Keu Publik' class='5d3aktap'>Keuangan Publik</option>
+                  <option value='P AKM I' class='5d3aktap'>Praktik Akuntansi Keuangan Menengah I</option>
+                  <option value='SIA' class='5d3aktap'>Sistem Informasi Akuntansi</option>
+                  <option value='Statistika Tr' class='5d3aktap'>Statistika Terapan</option>
+                  <option value='AKBI I' class='3d3akt'>Akuntansi Biaya I</option>
+                  <option value='AKM I' class='3d3akt'>Akuntansi Keuangan Menengah I</option>
+                  <option value='AkPem I' class='3d3akt'>Akuntansi Pemerintah I</option>
+                  <option value='Eko.Makro' class='3d3akt'>Ekonomi Makro</option>
+                  <option value='Perpajakan I' class='3d3akt'>Perpajakan I</option>
+                  <option value='P AKM I' class='3d3akt'>Praktik Akuntansi Keuangan Menengah I</option>
+                  <option value='AKL I' class='5d3akt'>Akuntansi Keuangan Lanjutan I</option>
+                  <option value='ALK' class='5d3akt'>Analisis Laporan Keuangan</option>
+                  <option value='AKSK' class='5d3akt'>Audit Keuangan Sektor Komersial</option>
+                  <option value='B.Indo' class='5d3akt'>Bahasa Indonesia</option>
+                  <option value='Budnus PK' class='5d3akt'>Budaya Nusantara dan Pengembangan Kepribadian</option>
+                  <option value='SIAP' class='5d3akt'>Sistem Informasi Akuntansi Pemerintah</option>
+                  <option value='Statistika Tr' class='5d3akt'>Statistika Terapan</option>
+                  <option value='Bank LK' class='5d3kbnap'>Bank dan Lembaga Keuangan</option>
+                  <option value='Keu Publik' class='5d3kbnap'>Keuangan Publik</option>
+                  <option value='P BMN' class='5d3kbnap'>Pengelolaan Barang Milik Negara</option>
+                  <option value='PKN' class='5d3kbnap'>Pengelolaan Kas Negara</option>
+                  <option value='P KeuDa' class='5d3kbnap'>Pengelolaan Keuangan Daerah</option>
+                  <option value='TKDD' class='5d3kbnap'>Transfer Ke Daerah dan Dana Desa</option>
+                  <option value='AKBI' class='3d3kbn'>Akuntansi Biaya</option>
+                  <option value='Eko.Makro' class='3d3kbn'>Ekonomi Makro</option>
+                  <option value='Mtk Keu' class='3d3kbn'>Matematika Keuangan</option>
+                  <option value='P PNBP' class='3d3kbn'>Pelaksanaan Pendapatan Negara Bukan Pajak</option>
+                  <option value='PBJ' class='3d3kbn'>Pengadaan Barang/Jasa Pemerintah</option>
+                  <option value='P BMN' class='3d3kbn'>Pengelolaan Barang Milik Negara</option>
+                  <option value='PAN I' class='3d3kbn'>Perencanaan Anggaran Negara I</option>
+                  <option value='Pjk InstPem' class='3d3kbn'>Perpajakan Instansi Pemerintah</option>
+                  <option value='AkPem Pus' class='5d3kbn'>Akuntansi Pemerintah Pusat</option>
+                  <option value='B.Indo' class='5d3kbn'>Bahasa Indonesia</option>
+                  <option value='Man Proy' class='5d3kbn'>Manajemen Proyek</option>
+                  <option value='PBJ' class='5d3kbn'>Pengadaan Barang/Jasa Pemerintah</option>
+                  <option value='P Keu BLU' class='5d3kbn'>Pengelolaan Keuangan BLU</option>
+                  <option value='P KeuDa' class='5d3kbn'>Pengelolaan Keuangan Daerah</option>
+                  <option value='PUP' class='5d3kbn'>Pengelolaan Utang Pemerintah</option>
+                  <option value='P AplKeuNeg' class='5d3kbn'>Praktik Aplikasi Keuangan Negara</option>
+                  <option value='HKN' class='5d3bcap'>Hukum Keuangan Negara</option>
+                  <option value='KLI KC' class='5d3bcap'>Kehumasan dan Layanan Informasi Kepabeanan dan Cukai</option>
+                  <option value='Kpabean Int' class='5d3bcap'>Kepabeanan Internasional</option>
+                  <option value='Manajemen' class='5d3bcap'>Manajemen</option>
+                  <option value='PengAudit' class='5d3bcap'>Pengantar Auditing</option>
+                  <option value='PIKC' class='5d3bcap'>Pengantar Intelijen Kepabeanan dan Cukai</option>
+                  <option value='TPB' class='5d3bcap'>Teknik Pemeriksaan Barang</option>
+                  <option value='Eko.Makro' class='3d3bc'>Ekonomi Makro</option>
+                  <option value='IKB I' class='3d3bc'>Identifikasi dan Klasifikasi Barang I</option>
+                  <option value='PH KC I' class='3d3bc'>Penegakan Hukum Kepabeanan dan Cukai I</option>
+                  <option value='PengAudit' class='3d3bc'>Pengantar Auditing</option>
+                  <option value='Per UU Cukai' class='3d3bc'>Perundang-undangan Cukai</option>
+                  <option value='Per UU Pabean' class='3d3bc'>Perundang-undangan Kepabeanan</option>
+                  <option value='TPI' class='3d3bc'>Teknik Perdagangan Internasional</option>
+                  <option value='TFC I' class='3d3bc'>Teknis dan Fasilitas Cukai I</option>
+                  <option value='T Pabean I' class='3d3bc'>Teknis Kepabeanan I</option>
+                  <option value='F Pabean' class='5d3bc'>Fasilitas Kepabeanan</option>
+                  <option value='F Per Int' class='5d3bc'>Fasilitas Perdagangan Internasional</option>
+                  <option value='KWN' class='5d3bc'>Kewarganegaraan</option>
+                  <option value='ManRis KC' class='5d3bc'>Manajemen Risiko Kepabeanan dan Cukai</option>
+                  <option value='PIKC' class='5d3bc'>Pengantar Intelijen Kepabeanan dan Cukai</option>
+                  <option value='Peng PKN' class='5d3bc'>Pengantar Pengelolaan Keuangan Negara</option>
+                  <option value='TPB' class='5d3bc'>Teknik Pemeriksaan Barang</option>
+                  <option value='T Perbend' class='5d3bc'>Teknis Perbendaharaan</option>
+                  <option value='AKM MA' class='3d3ma'>Akuntansi Keuangan Menengah (Khusus Manajemen Aset)</option>
+                  <option value='Hk Tanah' class='3d3ma'>Hukum Pertanahan</option>
+                  <option value='Hk Usaha' class='3d3ma'>Hukum Perusahaan</option>
+                  <option value='ManKeu' class='3d3ma'>Manajemen Keuangan</option>
+                  <option value='PAP I' class='3d3ma'>Penilaian Aset dan Properti I</option>
+                  <option value='Pjk BendPem' class='3d3ma'>Perpajakan Bendahara Pemerintah</option>
+                  <option value='Statistika' class='3d3ma'>Statistika</option>
+                  <option value='Apl Lap BMN' class='5d3ma'>Aplikasi Laporan BMN</option>
+                  <option value='Apl SIM KN II' class='5d3ma'>Aplikasi SIM Kekayaan Negara II</option>
+                  <option value='Keu Publik' class='5d3ma'>Keuangan Publik</option>
+                  <option value='PBJ' class='5d3ma'>Pengadaan Barang dan Jasa</option>
+                  <option value='PAP III' class='5d3ma'>Penilaian Aset dan Properti III</option>
+                  <option value='P Usaha I' class='5d3ma'>Penilaian Usaha I</option>
+                  <option value='Hk Bisnis' class='3d3pjkap'>Hukum Bisnis</option>
+                  <option value='AKL' class='5d3pjkap'>Akuntansi Keuangan Lanjutan</option>
+                  <option value='AkPer' class='5d3pjkap'>Akuntansi Perpajakan</option>
+                  <option value='KomLik' class='5d3pjkap'>Komunikasi Publik</option>
+                  <option value='Man ProBis WP' class='5d3pjkap'>Manajemen dan Proses Bisnis Wajib Pajak</option>
+                  <option value='Pen IlSos' class='5d3pjkap'>Penelitian Ilmu Sosial</option>
+                  <option value='Agama' class='1d3pjk'>Agama</option>
+                  <option value='B.Inggris' class='1d3pjk'>Bahasa Inggris</option>
+                  <option value='PengAkun I' class='1d3pjk'>Pengantar Akuntansi I</option>
+                  <option value='PIE' class='1d3pjk'>Pengantar Ilmu Ekonomi</option>
+                  <option value='PIH' class='1d3pjk'>Pengantar Ilmu Hukum</option>
+                  <option value='Peng PKN I' class='1d3pjk'>Pengantar Pengelolaan Keuangan Negara I</option>
+                  <option value='AKBI' class='3d3pjk'>Akuntansi Biaya</option>
+                  <option value='AKM I' class='3d3pjk'>Akuntansi Keuangan Menengah I</option>
+                  <option value='KUP' class='3d3pjk'>Ketentuan Umum Perpajakan</option>
+                  <option value='Keu Publik' class='3d3pjk'>Keuangan Publik</option>
+                  <option value='PBB' class='3d3pjk'>Pajak Bumi dan Bangunan</option>
+                  <option value='pph' class='3d3pjk'>Pajak Penghasilan</option>
+                  <option value='PPN' class='3d3pjk'>Pajak Pertambahan Nilai</option>
+                  <option value='Peng Hk Pjk' class='3d3pjk'>Pengantar Hukum Pajak</option>
+                  <option value='AKL' class='5d3pjk'>Akuntansi Keuangan Lanjutan</option>
+                  <option value='AkPer' class='5d3pjk'>Akuntansi Perpajakan</option>
+                  <option value='B.Indo' class='5d3pjk'>Bahasa Indonesia</option>
+                  <option value='Etika' class='5d3pjk'>Etika dan Anti Korupsi</option>
+                  <option value='KomLik' class='5d3pjk'>Komunikasi Publik</option>
+                  <option value='Man ProBis WP' class='5d3pjk'>Manajemen dan Proses Bisnis Wajib Pajak</option>
+                  <option value='Pancasila' class='5d3pjk'>Pancasila</option>
+                  <option value='Pen IlSos' class='5d3pjk'>Penelitian Ilmu Sosial</option>
+                  <option value='Eko.Makro' class='3d3pbb'>Ekonomi Makro</option>
+                  <option value='Eko.WilKot' class='3d3pbb'>Ekonomi Wilayah dan Perkotaan</option>
+                  <option value='Hk AgrPro' class='3d3pbb'>Hukum Agraria dan Properti</option>
+                  <option value='IUT' class='3d3pbb'>Ilmu Ukur Tanah dan Pemetaan</option>
+                  <option value='ManKeu I' class='3d3pbb'>Manajemen Keuangan I</option>
+                  <option value='PIR' class='3d3pbb'>Pengantar Investasi Realestat</option>
+                  <option value='Peng Pen Prop' class='3d3pbb'>Pengantar Penilaian Properti</option>
+                  <option value='TekBang' class='3d3pbb'>Teknologi Bangunan</option>
+                  <option value='B.Indo' class='5d3pbb'>Bahasa Indonesia</option>
+                  <option value='Hk PB' class='5d3pbb'>Hukum Perusahaan dan Bisnis</option>
+                  <option value='PPM' class='5d3pbb'>Pendataan dan Penilaian Masal</option>
+                  <option value='Peng Pen Bisnis' class='5d3pbb'>Pengantar Penilaian Bisnis</option>
+                  <option value='PMP' class='5d3pbb'>Penilaian Mesin dan Peralatan</option>
+                  <option value='PPK' class='5d3pbb'>Penilaian Properti Komersial</option>
+                  <option value='P SDA II' class='5d3pbb'>Penilaian Sumber Daya Alam II</option>
+                  <option value='APP' class='5d3pbbap'>Analisis Pasar Properti</option>
+                  <option value='Eko.SDA' class='5d3pbbap'>Ekonomi Sumber Daya Alam</option>
+                  <option value='Man Prop' class='5d3pbbap'>Manajemen Properti</option>
+                  <option value='PBB' class='5d3pbbap'>Pajak Bumi dan Bangunan (PBB)</option>
+                  <option value='Peng Pen Bisnis' class='5d3pbbap'>Pengantar Penilaian Bisnis</option>
+                  <option value='PMP' class='5d3pbbap'>Penilaian Mesin dan Peralatan</option>
+                  <option value='Statistika' class='5d3pbbap'>Statistika</option>
+                  <option value='PPM' class='6d3pbbap'>Pendataan dan Penilaian Masal</option>
+                  <option value='Peng Pen Bisnis' class='6d3pbbap'>Pengantar Penilaian Bisnis</option>
+                  <option value='PPK' class='6d3pbbap'>Penilaian Properti Komersial</option>
+                  <option value='AkMan' class='7d4aktapnon'>Akuntansi Manajemen</option>
+                  <option value='Pjk Kontem' class='7d4aktapnon'>Perpajakan Kontemporer</option>
+                  <option value='AkKeu Kontem' class='9d4aktapnon'>Akuntansi Keuangan Kontemporer</option>
+                  <option value='Audit FI' class='9d4aktapnon'>Audit Forensik dan Investigasi</option>
+                  <option value='ASP' class='9d4aktapnon'>Audit Sektor Publik</option>
+                  <option value='ASI' class='9d4aktapnon'>Audit Sistem Informasi</option>
+                  <option value='SIAP' class='9d4aktapnon'>Sistem Informasi Akuntansi Pemerintah</option>
+                  <option value='SPM' class='9d4aktapnon'>Sistem Pengendalian Manajemen</option>
+                  <option value='TA' class='9d4aktapnon'>Teori Akuntansi</option>
+                  <option value='AkKeu Kontem' class='7d4akt'>Akuntansi Keuangan Kontemporer</option>
+                  <option value='ASP' class='7d4akt'>Audit Sektor Publik</option>
+                  <option value='ASI' class='7d4akt'>Audit Sistem Informasi</option>
+                  <option value='Kepemimpinan' class='7d4akt'>Kepemimpinan</option>
+                  <option value='ManStrat' class='7d4akt'>Manajemen Stratejik</option>
+                  <option value='SPM' class='7d4akt'>Sistem Pengendalian Manajemen</option>
+                  <option value='TA' class='7d4akt'>Teori Akuntansi</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <button onclick="copyToClipboard('#hasil')" id="button" type="submit"
+                  class="btn btn-success btn-block">Copy
+                  Penamaan
+                  File</button>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            Tabel Excel: <a href="doc/Tabel Referensi by Walid.xlsx">Download</a>
+            <br>
+            Referensi: <a href="doc/peng172.pdf">Original</a> | <a href="doc/peng172.docx">Converted</a>
+            <br>
+            Versi: 08/11/2020
+         </div>
+      </div>
+   </div>
+
+   <script src="js/jquery-latest.min.js"></script>
+   <script src="js/notify.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+   <script src="js/jquery.chained.min.js">
+   </script>
+
+   <script>
+      // $("#prodi").select2();
+
+      $("#semester").chained("#prodi");
+      $("#matkul").chained("#semester");
+
+      $('#nama').on('input', function () {
+         var nama = $("#nama").val();
+         $("#hasil_nama").text(nama);
+      });
+
+      $('#npm').on('input', function () {
+         var npm = $("#npm").val();
+         $("#hasil_npm").text(npm);
+      });
+
+      $('#prodi').on('input', function () {
+         var prodi = $("#prodi").val();
+         $("#hasil_prodi").text(prodi);
+      });
+
+      $('#kelas').on('input', function () {
+         var kelas = $("#kelas").val();
+         $("#hasil_kelas").text(kelas);
+      });
+
+      $('#noabsen').on('input', function () {
+         var noabsen = $("#noabsen").val();
+         $("#hasil_noabsen").text(noabsen);
+      });
+
+      $('#sesi').on('input', function () {
+         var sesi = $("#sesi").val();
+         $("#hasil_sesi").text(sesi);
+      });
+
+      $('#matkul').on('input', function () {
+         var matkul = $("#matkul").val();
+         $("#hasil_matkul").text(matkul);
+      });
+
+      function copyToClipboard(element) {
+         var $temp = $("<input>");
+         $("body").append($temp);
+         $temp.val($.trim($(element).text())).select();
+         document.execCommand("copy");
+         $.notify("Penamaan LJU udah dicopy. Tinggal CTRL + V aja ya :)", "success");
+         $temp.remove();
+      }
+
+      function setCookie(cname, cvalue, exdays) {
+         var d = new Date();
+         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+         var expires = "expires=" + d.toUTCString();
+         document.cookie = cname + "=" + cvalue + "; " + expires;
+      }
+
+      function showCookie() {
+         document.write(document.cookie);
+      }
+   </script>
+</body>
+
+</html>
