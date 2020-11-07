@@ -155,3 +155,39 @@ function refreshButton() {
       $('#buttoncopy').removeAttr('disabled');
    }
 }
+
+function hapus() {
+   if (getCookie('nama')) {
+      document.cookie = 'nama=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+   }
+   if (getCookie('npm')) {
+      document.cookie = 'npm=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+   }
+   if (getCookie('prodi')) {
+      document.cookie = 'prodi=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+   }
+   if (getCookie('semester')) {
+      document.cookie = 'semester=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+   }
+   if (getCookie('kelas')) {
+      document.cookie = 'kelas=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+   }
+   if (getCookie('noabsen')) {
+      document.cookie = 'noabsen=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+   }
+   $("#nama").val('');
+   $("#npm").val('');
+   $("#prodi").val('');
+   $("#semester").val('');
+   $("#kelas").val('');
+   $("#noabsen").val('');
+
+   refreshValidation('#nama');
+   refreshValidation('#npm');
+   refreshValidation('#prodi');
+   refreshValidation('#semester');
+   refreshValidation('#kelas');
+   refreshValidation('#noabsen');
+   refreshButton();
+   $.notify("Data ujian berhasil dihapus", "success");
+}
