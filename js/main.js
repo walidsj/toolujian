@@ -6,18 +6,22 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
+function refreshValidation(name) {
+   if ($(name).val() != '' && $(name).val() != null) {
+      $(name).addClass('border-success');
+      $(name).removeClass('border-danger');
+   } else {
+      $(name).addClass('border-danger');
+      $(name).removeClass('border-success');
+   }
+}
+
 refreshButton();
 
 $('#nama').on('input', function () {
    var nama = $("#nama").val();
    $("#hasil_nama").text(nama);
-   if ($("#nama").val() != '' && $("#nama").val() != null) {
-      $("#nama").addClass('border-success');
-      $("#nama").removeClass('border-danger');
-   } else {
-      $("#nama").addClass('border-danger');
-      $("#nama").removeClass('border-success');
-   }
+   refreshValidation('#nama');
    refreshButton();
 });
 
@@ -25,18 +29,13 @@ if (getCookie('nama')) {
    var nama = getCookie('nama');
    $("#nama").val(nama);
    $("#hasil_nama").text(nama);
+   refreshValidation('#nama');
 }
 
 $('#npm').on('input', function () {
    var npm = $("#npm").val();
    $("#hasil_npm").text(npm);
-   if ($("#npm").val() != '' && $("#npm").val() != null) {
-      $("#npm").addClass('border-success');
-      $("#npm").removeClass('border-danger');
-   } else {
-      $("#npm").addClass('border-danger');
-      $("#npm").removeClass('border-success');
-   }
+   refreshValidation('#npm');
    refreshButton();
 });
 
@@ -44,18 +43,13 @@ if (getCookie('npm')) {
    var npm = getCookie('npm');
    $("#npm").val(npm);
    $("#hasil_npm").text(npm);
+   refreshValidation('#npm');
 }
 
 $('#prodi').on('input', function () {
    var prodi = $("#prodi").val();
    $("#hasil_prodi").text(prodi);
-   if ($("#prodi").val() != '' && $("#prodi").val() != null) {
-      $("#prodi").addClass('border-success');
-      $("#prodi").removeClass('border-danger');
-   } else {
-      $("#prodi").addClass('border-danger');
-      $("#prodi").removeClass('border-success');
-   }
+   refreshValidation('#prodi');
    refreshButton();
 });
 
@@ -63,34 +57,24 @@ if (getCookie('prodi')) {
    var prodi = getCookie('prodi');
    $('#prodi option[value='+prodi+']').attr('selected','selected');
    $("#hasil_prodi").text(prodi);
+   refreshValidation('#prodi');
 }
 
 $('#semester').on('input', function () {
-   if ($("#semester").val() != '' && $("#semester").val() != null) {
-      $("#semester").addClass('border-success');
-      $("#semester").removeClass('border-danger');
-   } else {
-      $("#semester").addClass('border-danger');
-      $("#semester").removeClass('border-success');
-   }
+   refreshValidation('#semester');
    refreshButton();
 });
 
 if (getCookie('semester')) {
    var semester = getCookie('semester');
    $('#semester option[value=' + semester + ']').attr('selected', 'selected');
+   refreshValidation('#semester');
 }
 
 $('#kelas').on('input', function () {
    var kelas = $("#kelas").val();
    $("#hasil_kelas").text(kelas);
-   if ($("#kelas").val() != '' && $("#kelas").val() != null) {
-      $("#kelas").addClass('border-success');
-      $("#kelas").removeClass('border-danger');
-   } else {
-      $("#kelas").addClass('border-danger');
-      $("#kelas").removeClass('border-success');
-   }
+   refreshValidation('#kelas');
    refreshButton();
 });
 
@@ -98,18 +82,13 @@ if (getCookie('kelas')) {
    var kelas = getCookie('kelas');
    $("#kelas").val(kelas);
    $("#hasil_kelas").text(kelas);
+   refreshValidation('#kelas');
 }
 
 $('#noabsen').on('input', function () {
    var noabsen = $("#noabsen").val();
    $("#hasil_noabsen").text(noabsen);
-   if ($("#noabsen").val() != '' && $("#noabsen").val() != null) {
-      $("#noabsen").addClass('border-success');
-      $("#noabsen").removeClass('border-danger');
-   } else {
-      $("#noabsen").addClass('border-danger');
-      $("#noabsen").removeClass('border-success');
-   }
+   refreshValidation('#noabsen');
    refreshButton();
 });
 
@@ -117,31 +96,20 @@ if (getCookie('noabsen')) {
    var noabsen = getCookie('noabsen');
    $("#noabsen").val(noabsen);
    $("#hasil_noabsen").text(noabsen);
+   refreshValidation('#noabsen');
 }
 
 $('#sesi').on('input', function () {
    var sesi = $("#sesi").val();
    $("#hasil_sesi").text(sesi);
-   if ($("#sesi").val() != '' && $("#sesi").val() != null) {
-      $("#sesi").addClass('border-success');
-      $("#sesi").removeClass('border-danger');
-   } else {
-      $("#sesi").addClass('border-danger');
-      $("#sesi").removeClass('border-success');
-   }
+   refreshValidation('#sesi');
    refreshButton();
 });
 
 $('#matkul').on('input', function () {
    var matkul = $("#matkul").val();
    $("#hasil_matkul").text(matkul);
-   if ($("#matkul").val() != '' && $("#matkul").val() != null) {
-      $("#matkul").addClass('border-success');
-      $("#matkul").removeClass('border-danger');
-   } else {
-      $("#matkul").addClass('border-danger');
-      $("#matkul").removeClass('border-success');
-   }
+   refreshValidation('#matkul');
    refreshButton();
 });
 
