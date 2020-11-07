@@ -35,8 +35,8 @@ $('#prodi').on('input', function () {
 
 if (getCookie('prodi')) {
    var prodi = getCookie('prodi');
-   $("#prodi").val(prodi);
    $('#prodi option[value='+prodi+']').attr('selected','selected');
+   $("#hasil_prodi").text(prodi);
 }
 
 if (getCookie('semester')) {
