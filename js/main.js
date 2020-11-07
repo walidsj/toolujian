@@ -36,12 +36,11 @@ $('#prodi').on('input', function () {
 if (getCookie('prodi')) {
    var prodi = getCookie('prodi');
    $("#prodi").val(prodi);
-   $("#hasil_prodi").text(prodi);
+   $('#prodi option[value='+prodi+']').attr('selected','selected');
 }
 
 if (getCookie('semester')) {
    var semester = getCookie('semester');
-   // $("#semester").val(semester);
    $('#semester option[value='+semester+']').attr('selected','selected');
 }
 
