@@ -32,23 +32,47 @@
    <meta name="twitter:image:alt" content="Tool Penamaan LJU by Walid">
 
    <link rel="icon" type="image/ico" href="favicon.ico">
-   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
    <meta name="theme-color" content="#23a127" />
    <meta name="msapplication-navbutton-color" content="#23a127" />
    <meta name="apple-mobile-web-app-status-bar-style" content="#23a127" />
+
+   <style>
+      #section {
+         margin-top: 50px;
+      }
+   </style>
 </head>
 
 <body>
-   <div class="container pt-5">
-      <div class="row">
-         <div class="col-md-12 text-center">
-            <div class="form-group">
-               <h1>Tool Penamaan LJU STAN 2020</h1>
-            </div>
+   <nav class="navbar navbar-light fixed-top bg-light">
+      <div class="container">
+         <a class="navbar-brand" href="/">
+            <img src="img/apel.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            Tool Penamaan LJU
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+               <li class="nav-item active">
+                  <a class="nav-link" href="/">Beranda <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="https://wa.me/6285157626557">Laporkan Kesalahan</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/walidsj/toolujian/archive/main.zip">Download Offline
+                     Mode</a>
+               </li>
+            </ul>
          </div>
       </div>
+   </nav>
+   <div id="section" class="container pt-5">
       <div class="row justify-content-center">
          <div class="col-md-4 mb-3">
             <div class="card">
@@ -318,14 +342,14 @@
             <br>
             Referensi: <a href="doc/peng172.pdf">Original</a> | <a href="doc/peng172.docx">Converted</a>
             <br>
-            Versi: 08/11/2020 (<a href="https://wa.me/6285157626557">Lapor Kesalahan</a>)
+            Versi: 08/11/2020
          </div>
       </div>
    </div>
 
    <script src="js/jquery-latest.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
    <script src="js/notify.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
    <script src="js/jquery.chained.min.js"></script>
    <script src="js/main.js"></script>
 </body>
