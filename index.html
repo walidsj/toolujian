@@ -71,13 +71,17 @@
             <div class="card">
                <div class="card-body">
                   <div class="form-group">
-                     <input id="nama" type="text" class="form-control" value="" placeholder="Nama Lengkap">
+                     <small class="font-weight-bold">Nama Lengkap</small>
+                     <input id="nama" type="text" class="form-control" value="" placeholder="Fulan bin Fulan">
                   </div>
                   <div class="form-group">
-                     <input id="npm" type="number" class="form-control" value="" placeholder="NPM">
+                     <small class="font-weight-bold">NPM</small>
+                     <input id="npm" type="number" class="form-control" value="" placeholder="2302180109">
                   </div>
                   <div class="form-group">
+                     <small class="font-weight-bold">Program Studi</small>
                      <select id="prodi" name="prodi" class="form-control">
+                        <option value=''>Pilih Program Studi</option>
                         <option value='d3akt'>DIII Akuntansi</option>
                         <option value='d3aktap'>DIII Akuntansi Alih Program</option>
                         <option value='d4aktreg'>DIV Akuntansi (Reguler)</option>
@@ -94,40 +98,43 @@
                      </select>
                   </div>
                   <div class="form-group">
+                     <small class="font-weight-bold">Semester</small>
                      <select id="semester" name="semester" class="form-control">
                         <option value="">Pilih Semester</option>
-                        <option value='3d3akt' class='d3akt'>3</option>
-                        <option value='5d3akt' class='d3akt'>5</option>
-                        <option value='3d3aktap' class='d3aktap'>3</option>
-                        <option value='5d3aktap' class='d3aktap'>5</option>
-                        <option value='7d4aktreg' class='d4aktreg'>7</option>
-                        <option value='7d4aktapnonakt' class='d4aktapnonakt'>7</option>
-                        <option value='9d4aktapnonakt' class='d4aktapnonakt'>9</option>
-                        <option value='1d3pjk' class='d3pjk'>1</option>
-                        <option value='3d3pjk' class='d3pjk'>3</option>
-                        <option value='5d3pjk' class='d3pjk'>5</option>
-                        <option value='3d3pjkap' class='d3pjkap'>3</option>
-                        <option value='5d3pjkap' class='d3pjkap'>5</option>
-                        <option value='3d3pbb' class='d3pbb'>3</option>
-                        <option value='5d3pbb' class='d3pbb'>5</option>
-                        <option value='4d3pbbap' class='d3pbbap'>4</option>
-                        <option value='5d3pbbap' class='d3pbbap'>5</option>
-                        <option value='6d3pbbap' class='d3pbbap'>6</option>
-                        <option value='3d3bc' class='d3bc'>3</option>
-                        <option value='5d3bc' class='d3bc'>5</option>
-                        <option value='5d3bcap' class='d3bcap'>5</option>
-                        <option value='3d3kbn' class='d3kbn'>3</option>
-                        <option value='5d3kbn' class='d3kbn'>5</option>
-                        <option value='5d3kbnap' class='d3kbnap'>5</option>
-                        <option value='3d3ma' class='d3ma'>3</option>
-                        <option value='5d3ma' class='d3ma'>5</option>
+                        <option value='3d3akt' class='d3akt'>III</option>
+                        <option value='5d3akt' class='d3akt'>V</option>
+                        <option value='3d3aktap' class='d3aktap'>III</option>
+                        <option value='5d3aktap' class='d3aktap'>V</option>
+                        <option value='7d4aktreg' class='d4aktreg'>VII</option>
+                        <option value='7d4aktapnonakt' class='d4aktapnonakt'>VII</option>
+                        <option value='9d4aktapnonakt' class='d4aktapnonakt'>IX</option>
+                        <option value='1d3pjk' class='d3pjk'>I</option>
+                        <option value='3d3pjk' class='d3pjk'>III</option>
+                        <option value='5d3pjk' class='d3pjk'>V</option>
+                        <option value='3d3pjkap' class='d3pjkap'>III</option>
+                        <option value='5d3pjkap' class='d3pjkap'>V</option>
+                        <option value='3d3pbb' class='d3pbb'>III</option>
+                        <option value='5d3pbb' class='d3pbb'>V</option>
+                        <option value='4d3pbbap' class='d3pbbap'>IV</option>
+                        <option value='5d3pbbap' class='d3pbbap'>V</option>
+                        <option value='6d3pbbap' class='d3pbbap'>VI</option>
+                        <option value='3d3bc' class='d3bc'>III</option>
+                        <option value='5d3bc' class='d3bc'>V</option>
+                        <option value='5d3bcap' class='d3bcap'>V</option>
+                        <option value='3d3kbn' class='d3kbn'>III</option>
+                        <option value='5d3kbn' class='d3kbn'>V</option>
+                        <option value='5d3kbnap' class='d3kbnap'>V</option>
+                        <option value='3d3ma' class='d3ma'>III</option>
+                        <option value='5d3ma' class='d3ma'>V</option>
                      </select>
                   </div>
                   <div class="form-group">
-                     <input id="kelas" type="text" class="form-control" value="" placeholder="Kelas (5-09)">
+                     <small class="font-weight-bold">Kelas</small>
+                     <input id="kelas" type="text" class="form-control" value="" placeholder="5-09">
                   </div>
                   <div class="form-group">
-                     <input id="noabsen" type="number" class="form-control" value="" placeholder="No. Absen (09)">
+                     <small class="font-weight-bold">No. Absen</small>
+                     <input id="noabsen" type="number" class="form-control" value="" placeholder="09">
                   </div>
                   <div class="form-group">
                      <button onclick="simpan()" id="button" type="submit" class="btn btn-primary my-1">Simpan
@@ -143,9 +150,11 @@
                <div class="card-body">
 
                   <div class="form-group">
-                     <input id="sesi" type="number" class="form-control" value="" placeholder="Sesi Ujian (01)">
+                     <small class="font-weight-bold">Sesi Ujian</small>
+                     <input id="sesi" type="number" class="form-control" value="" placeholder="09">
                   </div>
                   <div class="form-group">
+                     <small class="font-weight-bold">Mata Kuliah</small>
                      <select id="matkul" name="matkul" class="form-control">
                         <option value="">Pilih Mata Kuliah</option>
                         <option value='Eko.Mikro' class='3d3aktap'>Ekonomi Mikro</option>
@@ -335,7 +344,7 @@
             <br>
             Referensi: <a href="doc/peng172.pdf">Original</a> | <a href="doc/peng172.docx">Converted</a>
             <br>
-            Versi: 08/11/2020 11:00
+            Update: 08/11/2020 12:00
          </div>
       </div>
    </div>
