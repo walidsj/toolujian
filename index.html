@@ -37,35 +37,22 @@
    <meta name="theme-color" content="#23a127" />
    <meta name="msapplication-navbutton-color" content="#23a127" />
    <meta name="apple-mobile-web-app-status-bar-style" content="#23a127" />
-
-   <style>
-      #section {
-         margin-top: 50px;
-      }
-   </style>
 </head>
 
 <body>
-   <nav class="navbar navbar-light fixed-top bg-light">
-      <div class="container">
-         <a class="navbar-brand" href="/">
-            <img src="img/apel.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-            Tool Penamaan LJU
-         </a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-               <li class="nav-item">
-                  <a class="nav-link" href="https://wa.me/6285157626557">Laporkan Masalah</a>
-               </li>
-            </ul>
-         </div>
-      </div>
-   </nav>
-   <div id="section" class="container pt-5">
+   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <a class="navbar-brand mr-0 mr-md-auto text-center" href="/">
+         <img src="img/apel.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+         <h5 class="my-0 mr-md-auto font-weight-bold text-dark">Tool Ujian Ganjil</h5>
+      </a>
+      <nav class="my-2 my-md-0 mr-md-3">
+         <a class="p-2 text-dark" href="doc/Tabel Referensi by Walid.xlsx">Tabel Excel</a>
+         <a class="p-2 text-dark" href="doc/peng172.pdf">PENG-172</a>
+         <a class="p-2 text-dark" href="https://github.com/walidsj/toolujian">Source Code</a>
+      </nav>
+      <a class="btn btn-sm btn-outline-success" href="https://wa.me/6285157626557">Laporkan Masalah</a>
+   </div>
+   <div id="section" class="container">
       <div class="row justify-content-center">
          <div class="col-md-4 mb-3">
             <div class="card">
@@ -339,16 +326,15 @@
             </div>
          </div>
       </div>
-      <div class="row">
-         <div class="col-md-12 my-5 text-center">
-            Tabel Excel: <a href="doc/Tabel Referensi by Walid.xlsx">Download</a>
-            <br>
-            Referensi: <a href="doc/peng172.pdf">Original</a> | <a href="doc/peng172.docx">Converted</a>
-            <br>
-            Update: 08/11/2020 12:00
-         </div>
-      </div>
    </div>
+
+   <footer class="my-5 text-muted text-center text-small">
+      <p class="font-weight-bold mb-0">© 2020 Tool Penamaan Ujian
+      </p>
+      <p>
+         Update: 8/11/2020 13:00
+      </p>
+   </footer>
 
    <script src="js/jquery-latest.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
