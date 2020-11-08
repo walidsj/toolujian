@@ -1,6 +1,7 @@
-$.notify("Bookmark aja link lengkap di browsermu, thx :)", "info");
-$.notify("Saat offline, buka walidsj.github.io/toolujian (jgn bit.ly)", "info");
-$.notify("Sekarang, tool ini bisa diakses secara offline!", "info");
+$.notify("Bookmark aja link lengkapnya :)", "info");
+$.notify("Jangan buka bit.ly/tooluji kl offline", "info");
+$.notify("Kl offline, buka walidsj.github.io/toolujian", "info");
+$.notify("Tool ini bisa diakses secara offline!", "info");
 
 function getCookie(name) {
   const value = `; ${document.cookie}`;
