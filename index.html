@@ -37,6 +37,9 @@
    <meta name="theme-color" content="#23a127" />
    <meta name="msapplication-navbutton-color" content="#23a127" />
    <meta name="apple-mobile-web-app-status-bar-style" content="#23a127" />
+
+   <link rel='manifest' href='manifest.json'>
+   <link rel="apple-touch-icon" href="icon/180x180.png">
 </head>
 
 <body>
@@ -347,7 +350,24 @@
    <script src="js/notify.min.js"></script>
    <script src="js/jquery.chained.min.js"></script>
    <script src="js/main.js"></script>
-   <script src="upup.min.js"></script>
+   <script scr="pwabuilder-sw-register.js"></script>
+   <script type="module">
+      // This is the "Offline copy of pages" service worker
+
+      // Add this below content to your HTML page inside a tag, or add the js file to your page at the very top to register service worker
+      // If you get an error about not being able to import, double check that you have type="module" on your <script /> tag
+
+      /*
+       This code uses the pwa-update web component https://github.com/pwa-builder/pwa-update to register your service worker,
+       tell the user when there is an update available and let the user know when your PWA is ready to use offline.
+      */
+
+      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+      const el = document.createElement('pwa-update');
+      document.body.appendChild(el);
+   </script>
+   <!-- <script src="upup.min.js"></script>
    <script>
       UpUp.start({
          'content-url': 'index.html',
@@ -363,7 +383,7 @@
          ],
          'service-worker-url': 'upup.sw.min.js'
       });
-   </script>
+   </script> -->
 </body>
 
 </html>
