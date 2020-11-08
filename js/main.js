@@ -1,4 +1,4 @@
-$.notify("Cobain deh kl ga percaya.", "info");
+$.notify("Cobain deh kl ga percaya. Bookmark ya!", "info");
 $.notify("Biar yang koneksinya susah bisa akses.", "info");
 $.notify("Tool bisa diakses secara offline!", "info");
 
