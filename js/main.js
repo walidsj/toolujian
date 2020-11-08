@@ -41,7 +41,7 @@ function refreshValidation(name, kapok) {
    } else {
       $("#"+name).addClass('border-danger');
       $("#"+name).removeClass('border-success');
-      $("#hasil_"+name).text('['+kapok+']');
+      $("#hasil_"+name).text('<'+kapok+'>');
    }
 }
 
