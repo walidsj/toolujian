@@ -1,4 +1,6 @@
-// $("#prodi").select2();
+$.notify("Cobain deh kl ga percaya.", "info");
+$.notify("Biar yang koneksinya susah bisa akses.", "info");
+$.notify("Tool bisa diakses secara offline!", "info");
 
 function getCookie(name) {
   const value = `; ${document.cookie}`;
