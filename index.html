@@ -31,13 +31,12 @@
    <meta property="twitter:image" content="https://walidsj.github.io/toolujian/img/thumb.jpg">
    <meta name="twitter:image:alt" content="Tool Penamaan LJU by Walid">
 
+   <!-- Style -->
    <link rel="icon" type="image/ico" href="favicon.ico">
    <link href="css/bootstrap.min.css" rel="stylesheet" />
-
    <meta name="theme-color" content="#23a127" />
    <meta name="msapplication-navbutton-color" content="#23a127" />
    <meta name="apple-mobile-web-app-status-bar-style" content="#23a127" />
-
    <link rel='manifest' href='manifest.json'>
    <link rel="apple-touch-icon" href="icon/180x180.png">
 </head>
@@ -141,7 +140,6 @@
          <div class="col-md-4 mt-3">
             <div class="card">
                <div class="card-body">
-
                   <div class="form-group">
                      <small class="font-weight-bold">Sesi Ujian</small>
                      <input id="sesi" type="number" class="form-control" value="" placeholder="09">
@@ -333,7 +331,6 @@
          </div>
       </div>
    </div>
-
    <footer class="my-5 text-muted text-center text-small">
       <p class="font-weight-bold mb-0">© 2020 Tool Penamaan Ujian
       </p>
@@ -352,38 +349,10 @@
    <script src="js/main.js"></script>
    <script scr="pwabuilder-sw-register.js"></script>
    <script type="module">
-      // This is the "Offline copy of pages" service worker
-
-      // Add this below content to your HTML page inside a tag, or add the js file to your page at the very top to register service worker
-      // If you get an error about not being able to import, double check that you have type="module" on your <script /> tag
-
-      /*
-       This code uses the pwa-update web component https://github.com/pwa-builder/pwa-update to register your service worker,
-       tell the user when there is an update available and let the user know when your PWA is ready to use offline.
-      */
-
       import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-
       const el = document.createElement('pwa-update');
       document.body.appendChild(el);
    </script>
-   <!-- <script src="upup.min.js"></script>
-   <script>
-      UpUp.start({
-         'content-url': 'index.html',
-         'assets': [
-            'js/jquery-latest.min.js',
-            'js/bootstrap.min.js',
-            'js/notify.min.js',
-            'js/jquery.chained.min.js',
-            'js/main.js',
-            'css/bootstrap.min.css',
-            'favicon.ico',
-            'img/apel.png',
-         ],
-         'service-worker-url': 'upup.sw.min.js'
-      });
-   </script> -->
 </body>
 
 </html>
