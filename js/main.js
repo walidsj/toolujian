@@ -34,13 +34,14 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
-function refreshValidation(name) {
-   if ($(name).val() != '' && $(name).val() != null) {
-      $(name).addClass('border-success');
-      $(name).removeClass('border-danger');
+function refreshValidation(name, kapok) {
+   if ($("#"+name).val() != '' && $("#"+name).val() != null) {
+      $("#"+name).addClass('border-success');
+      $("#"+name).removeClass('border-danger');
    } else {
-      $(name).addClass('border-danger');
-      $(name).removeClass('border-success');
+      $("#"+name).addClass('border-danger');
+      $("#"+name).removeClass('border-success');
+      $("#hasil_"+name).text('['+kapok+']');
    }
 }
 
@@ -49,7 +50,7 @@ refreshButton();
 $('#nama').on('input', function () {
    var nama = $("#nama").val();
    $("#hasil_nama").text(nama);
-   refreshValidation('#nama');
+   refreshValidation('nama', 'Nama Lengkap');
    refreshButton();
 });
 
@@ -57,13 +58,13 @@ if (getCookie('nama')) {
    var nama = getCookie('nama');
    $("#nama").val(nama);
    $("#hasil_nama").text(nama);
-   refreshValidation('#nama');
+   refreshValidation('nama', 'Nama Lengkap');
 }
 
 $('#npm').on('input', function () {
    var npm = $("#npm").val();
    $("#hasil_npm").text(npm);
-   refreshValidation('#npm');
+   refreshValidation('npm', 'NPM');
    refreshButton();
 });
 
@@ -71,13 +72,13 @@ if (getCookie('npm')) {
    var npm = getCookie('npm');
    $("#npm").val(npm);
    $("#hasil_npm").text(npm);
-   refreshValidation('#npm');
+   refreshValidation('npm', 'NPM');
 }
 
 $('#prodi').on('input', function () {
    var prodi = $("#prodi").val();
    $("#hasil_prodi").text(prodi);
-   refreshValidation('#prodi');
+   refreshValidation('prodi', 'Program Studi');
    refreshButton();
 });
 
@@ -85,24 +86,24 @@ if (getCookie('prodi')) {
    var prodi = getCookie('prodi');
    $('#prodi option[value='+prodi+']').attr('selected','selected');
    $("#hasil_prodi").text(prodi);
-   refreshValidation('#prodi');
+   refreshValidation('prodi', 'Program Studi');
 }
 
 $('#semester').on('input', function () {
-   refreshValidation('#semester');
+   refreshValidation('semester', 'Semester');
    refreshButton();
 });
 
 if (getCookie('semester')) {
    var semester = getCookie('semester');
    $('#semester option[value=' + semester + ']').attr('selected', 'selected');
-   refreshValidation('#semester');
+   refreshValidation('semester', 'Semester');
 }
 
 $('#kelas').on('input', function () {
    var kelas = $("#kelas").val();
    $("#hasil_kelas").text(kelas);
-   refreshValidation('#kelas');
+   refreshValidation('kelas', 'Kelas');
    refreshButton();
 });
 
@@ -110,13 +111,13 @@ if (getCookie('kelas')) {
    var kelas = getCookie('kelas');
    $("#kelas").val(kelas);
    $("#hasil_kelas").text(kelas);
-   refreshValidation('#kelas');
+   refreshValidation('kelas', 'Kelas');
 }
 
 $('#noabsen').on('input', function () {
    var noabsen = $("#noabsen").val();
    $("#hasil_noabsen").text(noabsen);
-   refreshValidation('#noabsen');
+   refreshValidation('noabsen', 'No. Absen');
    refreshButton();
 });
 
@@ -124,20 +125,20 @@ if (getCookie('noabsen')) {
    var noabsen = getCookie('noabsen');
    $("#noabsen").val(noabsen);
    $("#hasil_noabsen").text(noabsen);
-   refreshValidation('#noabsen');
+   refreshValidation('noabsen', 'No. Absen');
 }
 
 $('#sesi').on('input', function () {
    var sesi = $("#sesi").val();
    $("#hasil_sesi").text(sesi);
-   refreshValidation('#sesi');
+   refreshValidation('sesi');
    refreshButton();
 });
 
 $('#matkul').on('input', function () {
    var matkul = $("#matkul").val();
    $("#hasil_matkul").text(matkul);
-   refreshValidation('#matkul');
+   refreshValidation('matkul', 'Matkul');
    refreshButton();
 });
 
@@ -210,12 +211,12 @@ function hapus() {
    $("#kelas").val('');
    $("#noabsen").val('');
 
-   refreshValidation('#nama');
-   refreshValidation('#npm');
-   refreshValidation('#prodi');
-   refreshValidation('#semester');
-   refreshValidation('#kelas');
-   refreshValidation('#noabsen');
+   refreshValidation('nama', 'Nama Lengkap');
+   refreshValidation('npm', 'NPM');
+   refreshValidation('prodi', 'Program Studi');
+   refreshValidation('semester', 'Semester');
+   refreshValidation('kelas', 'Kelas');
+   refreshValidation('noabsen', 'No. Absen');
    refreshButton();
    $.notify("Data ujian berhasil dihapus", "success");
 }
