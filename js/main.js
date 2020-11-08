@@ -1,7 +1,32 @@
-$.notify("Bookmark aja link lengkapnya :)", "info");
-$.notify("Jangan buka bit.ly/tooluji kl offline", "info");
-$.notify("Kl offline, buka walidsj.github.io/toolujian", "info");
-$.notify("Tool ini bisa diakses secara offline!", "info");
+
+if (getCookie('notif')) {
+   if (getCookie('notif') < 3) {
+      var angka = getCookie('notif');
+      showNotifikasi();
+
+      var n = parseInt(angka) + 1;
+      var d = new Date();
+      d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+
+      var expires = "expires=" + d.toUTCString();
+      document.cookie = 'notif' + "=" + n + "; " + expires;
+   }
+} else {
+   showNotifikasi();
+   var n = 1;
+   var d = new Date();
+   d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+
+   var expires = "expires=" + d.toUTCString();
+   document.cookie = 'notif' + "=" + n + "; " + expires;
+}
+
+function showNotifikasi() {
+   $.notify("Bookmark aja link lengkapnya :)", "info");
+   $.notify("Jangan buka bit.ly/tooluji kl offline", "info");
+   $.notify("Kl offline, buka walidsj.github.io/toolujian", "info");
+   $.notify("Tool ini bisa diakses secara offline!", "info");
+}
 
 function getCookie(name) {
   const value = `; ${document.cookie}`;
