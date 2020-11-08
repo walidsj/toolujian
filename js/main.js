@@ -22,9 +22,7 @@ if (getCookie('notif')) {
 }
 
 function showNotifikasi() {
-   $.notify("Bookmark aja link lengkapnya :)", "info");
-   $.notify("Jangan buka bit.ly/tooluji kl offline", "info");
-   $.notify("Kl offline, buka walidsj.github.io/toolujian", "info");
+   $.notify("Bookmark link lengkapnya / Add to Homescreen :)", "info");
    $.notify("Tool ini bisa diakses secara offline!", "info");
 }
 
