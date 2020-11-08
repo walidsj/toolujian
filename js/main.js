@@ -131,7 +131,7 @@ if (getCookie('noabsen')) {
 $('#sesi').on('input', function () {
    var sesi = $("#sesi").val();
    $("#hasil_sesi").text(sesi);
-   refreshValidation('sesi');
+   refreshValidation('sesi', 'Sesi Ujian');
    refreshButton();
 });
 
