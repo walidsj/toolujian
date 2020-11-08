@@ -204,6 +204,9 @@ function hapus() {
    if (getCookie('noabsen')) {
       document.cookie = 'noabsen=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
    }
+    if (getCookie('notif')) {
+      document.cookie = 'notif=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+   }
    $("#nama").val('');
    $("#npm").val('');
    $("#prodi").val('');
