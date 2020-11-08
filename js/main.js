@@ -1,6 +1,6 @@
 
 if (getCookie('notif')) {
-   if (getCookie('notif') < 3) {
+   if (getCookie('notif') < 2) {
       var angka = getCookie('notif');
       showNotifikasi();
 
