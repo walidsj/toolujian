@@ -1387,7 +1387,7 @@ var app = new Vue({
                Vue.$cookies.set(key,cookie[key]);
             }
          });
-         this.$vToastify.success({body: 'Data ujian udah disimpan.', position: 'top-right'});
+         this.$vToastify.success('Data ujian udah disimpan.');
       },
       deleteCookies: function() {
          const cookie = {
@@ -1409,18 +1409,22 @@ var app = new Vue({
          this.semester = '';
          this.onChangeSemester();
          this.absen = '';
-        this.matkul = '';
-        this.matkuls = '';
-         this.$vToastify.success({body: 'Data ujian udah dihapus.', position: 'top-right'});
+         this.matkul = '';
+         this.matkuls = '';
+         this.$vToastify.success('Data ujian udah dihapus.');
       },
-      copyToClipboard: function () {
-         const el = document.createElement('textarea');
-         el.value = this.hasilString;
-         document.body.appendChild(el);
-         el.select();
-         document.execCommand('copy');
-         document.body.removeChild(el);
-         this.$vToastify.success({body: 'Penamaan udah dicopy, Langsung CTRL+V aja', position: 'top-right'});
+       copyToClipboard: function () {
+           if (this.hasilBlock) {
+               const el = document.createElement('textarea');
+               el.value = this.hasilString;
+               document.body.appendChild(el);
+               el.select();
+               document.execCommand('copy');
+               document.body.removeChild(el);
+               this.$vToastify.success('Penamaan udah dicopy, Langsung CTRL+V aja');
+            } else {
+                this.$vToastify.error('Data inpuy ujian belum benar'); 
+          }
       }
    }
 })
