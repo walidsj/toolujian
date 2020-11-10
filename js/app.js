@@ -1303,7 +1303,8 @@ var app = new Vue({
             "kode": "TA",
             "nama": "Teori Akuntansi"
         }
-      ]
+      ],
+      alertActive: true
    },
    computed: {
       hasilString: function() {
@@ -1344,6 +1345,9 @@ var app = new Vue({
       }      
    },
    methods: {
+      closeAlert: function () {
+           this.alertActive = false;
+      },
       onChangeProdi: function() {
          var getSemester = this.semester_list.filter(semester => semester.id_prodi == this.prodi.id);
          if (!this.prodi) {
