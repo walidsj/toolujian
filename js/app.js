@@ -1310,7 +1310,7 @@ var app = new Vue({
           if (this.hasilBlock === true) {
               return `LJU_${this.sesi}_${this.prodi.kode}_${this.semester.angka+'-'+this.kelas}_${this.matkul.kode}_${this.absen}_${this.nama}_${this.npm}`;
           } else {
-              return 'Lengkapi data ujian dengan benar terlebih dulu.';
+              return 'Lengkapi dulu data ujian dengan benar.';
         }
       },
       hasilBlock: function() {
