@@ -67,16 +67,16 @@
                      <div class="form-group">
                         <small class="font-weight-bold">Nama Lengkap</small>
                         <input type="text" class="form-control" placeholder="Fulan bin Fulan" v-model="nama"
-                           :class="nama.length >= 5 ? 'border-success' : 'border-danger'" @focus="!nama">
+                           :class="nama.length >= 5 ? 'is-valid' : ''" @focus="!nama">
                      </div>
                      <div class="form-group">
                         <small class="font-weight-bold">NPM</small>
                         <input type="number" class="form-control" placeholder="2302180109" v-model="npm"
-                           :class="npm.length == 10 ? 'border-success' : 'border-danger'">
+                           :class="npm.length == 10 ? 'is-valid' : ''">
                      </div>
                      <div class="form-group">
                         <small class="font-weight-bold">Program Studi</small>
-                        <select class="form-control" v-model="prodi" :class="prodi ? 'border-success' : 'border-danger'"
+                        <select class="form-control" v-model="prodi" :class="prodi ? 'is-valid' : ''"
                            @change="onChangeProdi">
                            <option value="">Pilih Program Studi</option>
                            <option v-for="(prodi, id) in prodis" :value="prodi">
@@ -86,7 +86,7 @@
                      <div class="form-group">
                         <small class="font-weight-bold">Semester</small>
                         <select class="form-control" :disabled="!prodi" v-model="semester"
-                           :class="semester && prodi ? 'border-success' : 'border-danger'" @change="onChangeSemester">
+                           :class="semester && prodi ? 'is-valid' : ''" @change="onChangeSemester">
                            <option value="">Pilih Semester</option>
                            <option v-for="(semester, id) in semesters" :value="semester">
                               {{ semester.nama }}
@@ -96,12 +96,16 @@
                      <div class="form-group">
                         <small class="font-weight-bold">Kelas</small>
                         <input type="number" class="form-control" placeholder="09" v-model="kelas"
-                           :class="kelas.length == 2 ? 'border-success' : 'border-danger'">
+                           :class="kelas.length == 2 ? 'is-valid' : ''">
                      </div>
                      <div class="form-group">
                         <small class="font-weight-bold">No. Absen</small>
                         <input type="number" class="form-control" placeholder="18" v-model="absen"
-                           :class="absen.length == 2 ? 'border-success' : 'border-danger'">
+                           :class="absen.length == 2 ? 'is-valid' : ''">
+                     </div>
+                     <div class="form-group">
+                        <button class="btn btn-primary my-1" @click="addCookies">Simpan Data</button>
+                        <button class="btn btn-danger my-1" @click="deleteCookies">Hapus Data</button>
                      </div>
                   </div>
                </div>
@@ -112,31 +116,35 @@
                      <div class="form-group">
                         <small class="font-weight-bold">Sesi Ujian</small>
                         <input type="number" class="form-control" placeholder="09" v-model="sesi"
-                           :class="sesi.length == 2 ? 'border-success' : 'border-danger'">
+                           :class="sesi.length == 2 ? 'is-valid' : ''">
                      </div>
                      <div class="form-group">
                         <small class="font-weight-bold">Mata Kuliah</small>
                         <select class="form-control" v-model="matkul" :disabled="!semester || !prodi"
-                           :class="matkul && prodi && semester ? 'border-success' : 'border-danger'">
+                           :class="matkul && prodi && semester ? 'is-valid' : ''">
                            <option value="">Pilih Mata Kuliah</option>
                            <option v-for="(matkul, id) in matkuls" :value="matkul">
                               {{ matkul.nama }}
                            </option>
                         </select>
                      </div>
-                     <div class="form-group mt-4">
-                        <button class="btn btn-block p-3" style="font-size: .9rem"
-                           :class="hasilBlock ? 'btn-success' : 'btn-warning'" :disabled="hasilBlock == false"
-                           @click="copyToClipboard">{{ (hasilBlock) ? hasilString : 'Lengkapi data ujian dengan benar terlebih dulu.'}}
-                           <div class="mt-2" v-if="hasilBlock">
-                              <small>Click
-                                 me!</small>
-                           </div>
-                        </button>
+                     <div class="form-group">
+                        <div id="hasil" class="alert alert-warning font-weight-bolder" role="alert">
+                           {{ (hasilBlock) ? hasilString : 'Lengkapi data ujian dengan benar terlebih dulu.'}}
+                        </div>
                      </div>
                      <div class="form-group">
-                        <button class="btn btn-primary my-1" @click="addCookies">SIMPAN DATA</button>
-                        <button class="btn btn-danger my-1" @click="deleteCookies">HAPUS DATA</button>
+                        <button class="btn btn-success btn-block btn-lg" :disabled="hasilBlock == false"
+                           @click="copyToClipboard">
+                           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-stickies-fill mr-2"
+                              fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd"
+                                 d="M0 1.5A1.5 1.5 0 0 1 1.5 0H13a1 1 0 0 1 1 1H1.5a.5.5 0 0 0-.5.5V14a1 1 0 0 1-1-1V1.5z" />
+                              <path fill-rule="evenodd"
+                                 d="M3.5 2A1.5 1.5 0 0 0 2 3.5v11A1.5 1.5 0 0 0 3.5 16h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 16 9.586V3.5A1.5 1.5 0 0 0 14.5 2h-11zm6 8.5v4.396c0 .223.27.335.427.177l5.146-5.146a.25.25 0 0 0-.177-.427H10.5a1 1 0 0 0-1 1z" />
+                           </svg>Copy
+                           Penamaan
+                           File</button>
                      </div>
                   </div>
                </div>

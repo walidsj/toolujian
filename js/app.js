@@ -1364,8 +1364,10 @@ var app = new Vue({
             } else {
                if (getMatkul !== this.matkuls) {
                   this.matkul = '';
+                  this.matkuls = '';
+               } else {
+                  this.matkuls = getMatkul;
                }
-               this.matkuls = getMatkul;
             }
          }
       },
@@ -1401,7 +1403,9 @@ var app = new Vue({
          this.npm = '';
          this.kelas = '';
          this.prodi = '';
+         this.onChangeProdi();
          this.semester = '';
+         this.onChangeSemester();
          this.absen = '';
          this.$vToastify.success({body: 'Data ujian udah dihapus.', position: 'top-right'});
       },
