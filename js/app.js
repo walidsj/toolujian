@@ -1431,8 +1431,7 @@ var app = new Vue({
                el.select();
                document.execCommand('copy');
                document.body.removeChild(el);
-               this.showToast('Penamaan udah dicopy, langsung Ctrl+V aja.');
-            //    this.$vToastify.success('Penamaan udah dicopy, Langsung CTRL+V aja');
+               this.$vToastify.success('Penamaan udah dicopy, Langsung CTRL+V aja');
             } else {
                 this.$vToastify.error('Data input ujian belum benar'); 
           }
