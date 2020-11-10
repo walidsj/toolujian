@@ -62,24 +62,20 @@
       </div>
       <div id="section" class="container">
          <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-4">
                <transition name="fade">
-                  <div class="alert alert-info font-weight-bold" v-if="alertActive">
+                  <div class="alert alert-info font-weight-bold m-0" v-if="alertActive">
                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="mr-2" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                      </svg>
-                     Pastikan semua diisi sesuai format sampai muncul centang hijau di setiap kolom.
+                     Pastikan isi sesuai format sampai muncul centang hijau di setiap kolom.
                      <button type="button" class="close" @click="closeAlert">
                         <span>&times;</span>
                      </button>
                   </div>
                </transition>
-            </div>
-         </div>
-         <div class="row justify-content-center">
-            <div class="col-md-4">
                <div class="card border-0">
                   <div class="card-body">
                      <div class="form-group">
