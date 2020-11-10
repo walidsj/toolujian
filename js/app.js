@@ -1343,14 +1343,18 @@ var app = new Vue({
       onChangeProdi: function() {
          var getSemester = this.semester_list.filter(semester => semester.id_prodi == this.prodi.id);
          if (!this.prodi) {
-            this.semester = '';
-            this.semesters = '';
+             this.semester = '';
+             this.semesters = '';
+             this.matkul = '';
+             this.matkuls = '';
          } else {
-            if (getSemester !== this.semesters) {
+            if (getSemester != this.semesters) {
                 this.semester = '';
+                this.matkul = '';
+             this.matkuls = '';
             }
             this.semesters = getSemester;
-         }
+           }
       },
       onChangeSemester: function() {
          var getMatkul = (this.matkul_list.filter(matkul => matkul.id_prodi == this.prodi.id)).filter(matkul => matkul.id_semester == this.semester.id);
@@ -1362,12 +1366,10 @@ var app = new Vue({
                this.matkul = '';
                this.matkuls = '';   
             } else {
-               if (getMatkul !== this.matkuls) {
+               if (getMatkul != this.matkuls) {
                   this.matkul = '';
-                  this.matkuls = getMatkul;
-                } else {
-                  this.matkuls = '';
                }
+               this.matkuls = getMatkul;
             }
          }
       },
@@ -1407,6 +1409,8 @@ var app = new Vue({
          this.semester = '';
          this.onChangeSemester();
          this.absen = '';
+        this.matkul = '';
+        this.matkuls = '';
          this.$vToastify.success({body: 'Data ujian udah dihapus.', position: 'top-right'});
       },
       copyToClipboard: function () {
