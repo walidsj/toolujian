@@ -1364,9 +1364,9 @@ var app = new Vue({
             } else {
                if (getMatkul !== this.matkuls) {
                   this.matkul = '';
-                  this.matkuls = '';
-               } else {
                   this.matkuls = getMatkul;
+                } else {
+                  this.matkuls = '';
                }
             }
          }
