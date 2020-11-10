@@ -1307,7 +1307,11 @@ var app = new Vue({
    },
    computed: {
       hasilString: function() {
-         return `LJU_${(this.sesi) ? this.sesi : '<Sesi Ujian>'}_${(this.prodi.kode) ? this.prodi.kode : '<Prodi>'}_${(this.kelas && this.semester.angka) ? this.semester.angka+'-'+this.kelas : '<Kelas>'}_${(this.matkul.kode) ? this.matkul.kode : '<Mata Kuliah>'}_${(this.absen) ? this.absen : '<No. Absen>'}_${(this.nama) ? this.nama : '<Nama Lengkap>'}_${(this.npm) ? this.npm : '<NPM>'}`;
+          if (this.hasilBlock === true) {
+              return `LJU_${this.sesi}_${this.prodi.kode}_${this.semester.angka+'-'+this.kelas}_${this.matkul.kode}_${this.absen}_${this.nama}_${this.npm}`;
+          } else {
+              return 'Lengkapi data ujian dengan benar terlebih dulu.';
+        }
       },
       hasilBlock: function() {
          if (!this.nama || this.nama.length < 5 || !this.npm || this.npm.length != 10 || !this.prodi || !this.semester || !this.kelas || this.kelas.length != 2 || !this.absen || this.absen.length != 2 || !this.sesi || this.sesi.length != 2 || !this.matkul) {
@@ -1423,7 +1427,7 @@ var app = new Vue({
                document.body.removeChild(el);
                this.$vToastify.success('Penamaan udah dicopy, Langsung CTRL+V aja');
             } else {
-                this.$vToastify.error('Data inpuy ujian belum benar'); 
+                this.$vToastify.error('Data input ujian belum benar'); 
           }
       }
    }
