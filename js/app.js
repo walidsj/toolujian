@@ -16,67 +16,67 @@ var app = new Vue({
         {
             "id": "1",
             "kode": "d3akt",
-            "nama": "DIII Akuntansi"
+            "nama": "D-III Akuntansi"
         },
         {
             "id": "2",
             "kode": "d3aktap",
-            "nama": "DIII Akuntansi Alih Program"
+            "nama": "D-III Akuntansi Alih Program"
         },
         {
             "id": "3",
             "kode": "d4aktreg",
-            "nama": "DIV Akuntansi (Reguler)"
+            "nama": "D-IV Akuntansi (Reguler)"
         },
         {
             "id": "4",
             "kode": "d4aktapnonakt",
-            "nama": "DIV Akuntansi Alih Program (Non Akt)"
+            "nama": "D-IV Akuntansi Alih Program (Non Akt)"
         },
         {
             "id": "5",
             "kode": "d3pjk",
-            "nama": "DIII Pajak"
+            "nama": "D-III Pajak"
         },
         {
             "id": "6",
             "kode": "d3pjkap",
-            "nama": "DIII Pajak Alih Program"
+            "nama": "D-III Pajak Alih Program"
         },
         {
             "id": "7",
             "kode": "d3pbb",
-            "nama": "DIII PBB/Penilai"
+            "nama": "D-III PBB/Penilai"
         },
         {
             "id": "8",
             "kode": "d3pbbap",
-            "nama": "DIII PBB/Penilai Alih Program"
+            "nama": "D-III PBB/Penilai Alih Program"
         },
         {
             "id": "9",
             "kode": "d3bc",
-            "nama": "DIII Kepabeanan Dan Cukai"
+            "nama": "D-III Kepabeanan Dan Cukai"
         },
         {
             "id": "10",
             "kode": "d3bcap",
-            "nama": "DIII Kepabeanan Dan Cukai Alih Program"
+            "nama": "D-III Kepabeanan Dan Cukai Alih Program"
         },
         {
             "id": "11",
             "kode": "d3kbn",
-            "nama": "DIII Kebendaharaan Negara"
+            "nama": "D-III Kebendaharaan Negara"
         },
         {
             "id": "12",
             "kode": "d3kbnap",
-            "nama": "DIII Kebendaharaan Negara Alih Program"
+            "nama": "D-III Kebendaharaan Negara Alih Program"
         },
         {
             "id": "13",
             "kode": "d3ma",
-            "nama": "DIII Manajemen Aset"
+            "nama": "D-III Manajemen Aset"
         }
     ],
     semester_list: [
@@ -1672,6 +1672,9 @@ var app = new Vue({
          } else {
             return true;
         }
+      },
+        linkPengumpulan: function () {
+            return 'http://gg.gg/lju_' + this.prodi.kode + '_' + this.semester.angka + '-' + this.kelas;
       }
    },
    mounted: function () {
