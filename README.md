@@ -6,7 +6,7 @@
 </p>
 
 ## About
-This tool has usability for formatting and naming the exam answer sheets or files in accordance with applicable provisions that have been established by the educational institution of [PKN STAN](https://www.linkedin.com/school/politeknik-keuangan-negara-stan/) (State Finance Polytechnic of STAN). By using optimal html and javascript programing language, we finally can produce a simple program like this tool but very useful for student's exam lifes, especially in campus of PKN STAN.
+This tool has usability for formatting and naming the exam answer sheets or files in accordance with applicable provisions that have been established by the educational institution of [PKN STAN](https://www.linkedin.com/school/politeknik-keuangan-negara-stan/) (State Finance Polytechnic of STAN). By using optimal html and javascript programing language, we finally can produce a simple program like this tool but very useful for student's exam lifes, especially in [campus of PKN STAN](https://pknstan.ac.id).
 
 It uses Cookies as a central userdata storage (instead of using LocalStorage because its simplicity), so it can save user's default exam settings which filled-in by students, even though it doesn't use the server-side renderer at all. Because of its light approach in production, it is suitable for rapid-mass use and requires no strong connection.
 
