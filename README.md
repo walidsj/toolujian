@@ -1,4 +1,4 @@
-<p align="center"><a href="https://walidsj.github.io/toolujian/" target="_blank"><img src="https://user-images.githubusercontent.com/50021257/99206520-2fa56400-27ee-11eb-8a63-bd20f12aeccb.png" width="400"></a></p>
+<p align="center"><a href="https://walidsj.github.io/toolujian/" target="_blank"><img src="https://walidsj.github.io/toolujian/img/apel.png" width="92"></a></p>
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/50021257/98807107-bfdd5500-244c-11eb-9c28-a51c1064d57c.png" alt="Build Status">
