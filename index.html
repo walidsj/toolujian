@@ -110,15 +110,21 @@
                            </option>
                         </select>
                      </div>
-                     <div class="form-group">
-                        <small class="font-weight-bold">Kelas</small>
-                        <input type="number" class="form-control" placeholder="09" v-model="kelas"
-                           :class="kelas.length == 2 ? 'is-valid' : ''">
-                     </div>
-                     <div class="form-group">
-                        <small class="font-weight-bold">No. Absen</small>
-                        <input type="number" class="form-control" placeholder="18" v-model="absen"
-                           :class="absen.length == 2 ? 'is-valid' : ''">
+                     <div class="row">
+                        <div class="col-6">
+                           <div class="form-group">
+                              <small class="font-weight-bold">Kelas</small>
+                              <input type="number" class="form-control" placeholder="09" v-model="kelas"
+                                 :class="kelas.length == 2 ? 'is-valid' : ''">
+                           </div>
+                        </div>
+                        <div class="col-6">
+                           <div class="form-group">
+                              <small class="font-weight-bold">No. Absen</small>
+                              <input type="number" class="form-control" placeholder="18" v-model="absen"
+                                 :class="absen.length == 2 ? 'is-valid' : ''">
+                           </div>
+                        </div>
                      </div>
                      <div class="form-group">
                         <button class="btn btn-primary my-1" @click="addCookies">Simpan Data</button>
