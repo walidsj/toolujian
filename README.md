@@ -5,15 +5,15 @@
 <img src="https://user-images.githubusercontent.com/50021257/98807147-cf5c9e00-244c-11eb-967c-8a6fa7f5a995.png" alt="License">
 </p>
 
-##### Table of Contents
-* [About](#about)
-* [Features](#features)
-* [Screenshots](#screenshots)
-
 ## About
 This tool is used to format the name of the exam answer sheet file in accordance with the applicable provisions and has been established by the PKN STAN institution. Using the optimal html and javascript programming languages, so that it can produce useful tools for students at large, especially in PKN STAN.
 
 This tool uses the cookies feature, so it can save the settings filled in by students, even though it doesn't use the serverside renderer at all. Suitable for light use and does not require a strong connection.
+
+##### Table of Contents
+* [About](#about)
+* [Features](#features)
+* [Screenshots](#screenshots)
 
 This release includes an update to replace the javascript library from JQuery to the more extensible and modern Vue.js. This replacement does not cause the application to lose its functions because it is successfully ported properly. Then included also a new notification feature using the Toastify plugin (3rd party Vuejs plugin).
 
