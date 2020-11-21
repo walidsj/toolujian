@@ -1759,7 +1759,7 @@ var app = new Vue({
          };
          Object.keys(cookie).forEach(function(key) {
             if (cookie[key]) {
-               Vue.$cookies.set(key,cookie[key]);
+               Vue.$cookies.set(key,cookie[key],'30d');
             }
          });
          this.$vToastify.success('Data ujian udah disimpan.');
